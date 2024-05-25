@@ -67,6 +67,7 @@ int main(int argc, char* argv[])
     while (1)
     {
         fgets(line, sizeof(line), input);
+        
         if (strcmp(line, "END") == 0)
         {
             break;

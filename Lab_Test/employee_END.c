@@ -65,14 +65,21 @@ int main(int argc, char *argv[])
         return 4;
     }
 
-    char line[91];
+    char line[92];
     int count = 0;
     EMPLOYEE arr[125];
 
-    while (fgets(line, sizeof(line), input))
+    while (1)
     {
-        line[strlen(line) - 1] = '\0';
 
+        fgets(line, sizeof(line), input);
+
+        if (strcmp(line, "END") == 0)
+        {
+            break;
+        }
+        
+        line[strlen(line) - 1] = '\0';
         char *token = strtok(line, ";");
         if (token != NULL)
             strcpy(arr[count].name, token);
